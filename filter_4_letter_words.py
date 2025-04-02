@@ -8,7 +8,7 @@ def filter_4_letter_words(input_file, output_file):
     try:
         with open(input_file, 'r') as infile, open(output_file, 'w') as outfile:
             for line in infile:
-                word = line.strip()  # Remove whitespace
+                word = line.strip().lower()  # Remove whitespace
                 if len(word) == 4 and word.isalpha():
                     outfile.write(word + '\n')
         print(f"Successfully filtered 4-letter words from '{input_file}' to '{output_file}'.")
